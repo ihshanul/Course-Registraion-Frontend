@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register a Course</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #36d1dc, #5b86e5);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #5b86e5, #36d1dc);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Kickstart Your Learning</h1>
+        <form action="http://localhost:8080/courses/register" method="post">
+            <label for="name">Enter Your Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+
+            <label for="email">Enter Your Email</label>
+            <input type="email" name="emailId" id="email" placeholder="you@example.com" required>
+
+            <label for="course">Choose a Course</label>
+            <select name="courseName" id="course">
+                <option value="Java Essentials">Java Essentials</option>
+                <option value="Python For ML">Python For ML</option>
+                <option value="Spring Boot">Spring Boot</option>
+            </select>
+
+            <button type="submit">Enroll Now</button>
+        </form>
+    </div>
+</body>
+</html>
